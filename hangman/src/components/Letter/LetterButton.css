@@ -1,0 +1,18 @@
+.letter-button {
+    display: inline-block;
+    width: 44px;
+    height: auto;
+    margin: 0 4px 0 4px;
+    padding: 8px 0 8px;
+    border: gainsboro 1px solid;
+    text-align: center;
+}
+
+.letter-button.available {
+    background-color: lightblue;
+}
+
+.letter-button.used {
+    background-color: darkgrey;
+    color: white;
+}
