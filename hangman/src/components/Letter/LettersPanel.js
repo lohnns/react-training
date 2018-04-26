@@ -6,8 +6,8 @@ import Letter from "./LetterButton";
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 function insertLetter(usedLetters, letter, guessLetter) {
-    var used = usedLetters.has(letter) ? 'used' : 'available';
-    return (<Letter letter={letter} status={used} guessLetter={guessLetter}/>)
+    const used = usedLetters.has(letter);
+    return (<Letter letter={letter} used={used} guessLetter={guessLetter}/>)
 }
 
 const LettersPanel = ({usedLetters, guessLetter}) => (
