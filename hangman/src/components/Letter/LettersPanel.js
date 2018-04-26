@@ -5,23 +5,18 @@ import Letter from "./LetterButton";
 
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-function insertLetter(usedLetters, letter, guessLetter) {
-    const used = usedLetters.has(letter);
-    return (<Letter letter={letter} used={used} guessLetter={guessLetter}/>)
-}
-
-const LettersPanel = ({usedLetters, guessLetter}) => (
+const LettersPanel = ({guessLetter}) => (
     <div className='letters-panel'>
         <div className='letters-bar'>
         {
             LETTERS.slice(0, LETTERS.length/2)
-                .map(letter => insertLetter(usedLetters, letter, guessLetter))
+                .map(letter => <Letter letter={letter} guessLetter={guessLetter}/>)
         }
         </div>
         <div className='letters-bar'>
         {
             LETTERS.slice(LETTERS.length/2, LETTERS.length)
-                .map(letter => insertLetter(usedLetters, letter, guessLetter))
+                .map(letter => <Letter letter={letter} guessLetter={guessLetter}/>)
         }
         </div>
     </div>
