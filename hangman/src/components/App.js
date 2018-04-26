@@ -13,7 +13,7 @@ class App extends Component {
     }
 
     guessLetter = letter => {
-        const { usedLetters, gameId } = this.state;
+        const { usedLetters } = this.state;
         usedLetters.add(letter);
         this.setState({
             usedLetters: new Set(usedLetters)
@@ -21,12 +21,16 @@ class App extends Component {
     }
 
     render() {
+        const { answer, usedLetters } = this.state;
         return (
             <div className="App">
                 <header className="App-header">
                     <h1 className="App-title">Hangman game</h1>
                 </header>
                 <p className="App-intro">
+                    <div id='answer' className='hg-sentence'>{
+                        answer.split('').map(char => (usedLetters.has(char) ? char : '_') + ' ')
+                    }</div>
                     <LettersPanel guessLetter={this.guessLetter}/>
                 </p>
             </div>
