@@ -16,3 +16,10 @@
 .App-intro {
   font-size: large;
 }
+
+.hg-sentence {
+  margin-top: 12px;
+  margin-bottom: 22px;
+  font-size: 38px;
+  letter-spacing: 13px;
+}
