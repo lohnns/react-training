@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
-import LettersPanel from "./Letter/LetterPanel";
+import LetterPanel from "./Letter/LetterPanel";
 
+import {pickRandomWord} from '../services/dictionnary';
 import './App.css';
 
 class App extends Component {
@@ -55,7 +56,7 @@ class App extends Component {
                     <div id='answer' className='hg-sentence'>{phrase}</div>
                     {
                         phrase.indexOf('_') > -1 ?
-                            <LettersPanel guessLetter={this.guessLetter}/>
+                            <LetterPanel guessLetter={this.guessLetter}/>
                             :
                             <div>
                                 <div>You win in {usedLetters.size} guesses!</div>
@@ -66,27 +67,6 @@ class App extends Component {
             </div>
         );
     }
-}
-
-/* util stuff to get words */
-
-let words = [
-    'karaoke',
-    'patinoire',
-    'peruvienne',
-    'charcuterie',
-    'epreuve',
-    'lunaire',
-    'ecrevisse',
-    'donjon'
-];
-
-function pickRandomWord() {
-    if (words.length === 0) {
-        return 'derniermot';
-    }
-    let i = Math.floor(Math.random() * words.length);
-    return words.splice(i, 1)[0];
 }
 
 export default App;
