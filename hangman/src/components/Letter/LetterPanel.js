@@ -1,19 +1,20 @@
 import React from 'react';
 
-import './LettersPanel.css';
 import Letter from "./LetterButton";
+
+import './LetterPanel.css';
 
 const LETTERS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 
-const LettersPanel = ({guessLetter}) => (
-    <div className='letters-panel'>
-        <div className='letters-bar'>
+const LetterPanel = ({guessLetter}) => (
+    <div className='letter-panel'>
+        <div className='letter-bar'>
         {
             LETTERS.slice(0, LETTERS.length/2)
                 .map(letter => <Letter letter={letter} guessLetter={guessLetter}/>)
         }
         </div>
-        <div className='letters-bar'>
+        <div className='letter-bar'>
         {
             LETTERS.slice(LETTERS.length/2, LETTERS.length)
                 .map(letter => <Letter letter={letter} guessLetter={guessLetter}/>)
@@ -22,4 +23,4 @@ const LettersPanel = ({guessLetter}) => (
     </div>
 );
 
-export default LettersPanel;
+export default LetterPanel;

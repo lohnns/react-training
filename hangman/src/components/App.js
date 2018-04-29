@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+
+import LettersPanel from "./Letter/LetterPanel";
+
 import './App.css';
-import LettersPanel from "./Letter/LettersPanel";
 
 class App extends Component {
 
@@ -10,7 +12,7 @@ class App extends Component {
     }
 
     static initGame() {
-        const answer = 'aab'.toUpperCase();
+        const answer = pickRandomWord().toUpperCase();
         return {
             answer: answer,
             usedLetters: new Set()
@@ -65,5 +67,25 @@ class App extends Component {
     }
 }
 
+/* util stuff to get words */
+
+let words = [
+    'karaoke',
+    'patinoire',
+    'peruvienne',
+    'charcuterie',
+    'epreuve',
+    'lunaire',
+    'ecrevisse',
+    'donjon'
+];
+
+function pickRandomWord() {
+    if (words.length === 0) {
+        return 'derniermot';
+    }
+    let i = Math.floor(Math.random() * words.length);
+    return words.splice(i, 1)[0];
+}
 
 export default App;

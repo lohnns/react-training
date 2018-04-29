@@ -33,7 +33,7 @@ class LetterButton extends Component {
 
 LetterButton.propTypes = {
     letter: propTypes.string.isRequired,
-    onClick: propTypes.func.isRequired
-}
+    guessLetter: propTypes.func.isRequired
+};
 
 export default LetterButton;
