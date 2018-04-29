@@ -20,6 +20,7 @@ class App extends Component {
     }
 
     /* actions */
+    /* Here are functions declared with arrows to bind them to App context. */
 
     guessLetter = (letter) => {
         const {usedLetters} = this.state;
