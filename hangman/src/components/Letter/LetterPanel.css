@@ -1,0 +1,14 @@
+.letter-panel {
+    margin: auto;
+    width: fit-content;
+    border: #312898 1px solid;
+    padding: 8px;
+}
+
+.letter-bar {
+    margin: auto;
+}
+
+.letter-bar + .letter-bar {
+    margin-top: 8px;
+}
