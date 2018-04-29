@@ -6,45 +6,52 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = this.initGame();
+        this.state = App.initGame();
     }
 
-    initGame = () => {
-        const answer = 'Abc'.toUpperCase();
+    static initGame() {
+        const answer = 'aab'.toUpperCase();
         return {
             answer: answer,
-            usedLetters: new Set(),
-            lettersToFound: new Set([...answer])
+            usedLetters: new Set()
         };
     }
 
-    guessLetter = letter => {
-        const {usedLetters, lettersToFound} = this.state;
+    /* actions */
+
+    guessLetter = (letter) => {
+        const {usedLetters} = this.state;
         usedLetters.add(letter);
-        lettersToFound.delete(letter);
         this.setState({
-            usedLetters: new Set(usedLetters),
-            lettersToFound: new Set(lettersToFound)
+            usedLetters: new Set(usedLetters)
         });
-    }
+    };
 
     startNewGame = () => {
-        this.setState(this.initGame());
+        this.setState(App.initGame());
+    };
+
+    /* rendering */
+
+    computeDisplay() {
+        const {answer, usedLetters} = this.state;
+        return answer.replace(/\w/g,
+            (letter) => (usedLetters.has(letter) ? letter : '_')
+        )
     }
 
     render() {
-        const {answer, lettersToFound, usedLetters} = this.state;
+        const {usedLetters} = this.state;
+        const phrase = this.computeDisplay();
         return (
             <div className="App">
                 <header className="App-header">
                     <h1 className="App-title">Hangman game</h1>
                 </header>
                 <p className="App-intro">
-                    <div id='answer' className='hg-sentence'>{
-                        [...answer].map(char => usedLetters.has(char) ? char : '_')
-                    }</div>
+                    <div id='answer' className='hg-sentence'>{phrase}</div>
                     {
-                        lettersToFound.size !== 0 ?
+                        phrase.indexOf('_') > -1 ?
                             <LettersPanel guessLetter={this.guessLetter}/>
                             :
                             <div>
@@ -57,5 +64,6 @@ class App extends Component {
         );
     }
 }
+
 
 export default App;

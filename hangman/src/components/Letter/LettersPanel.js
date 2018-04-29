@@ -3,7 +3,7 @@ import React from 'react';
 import './LettersPanel.css';
 import Letter from "./LetterButton";
 
-const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const LETTERS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 
 const LettersPanel = ({guessLetter}) => (
     <div className='letters-panel'>

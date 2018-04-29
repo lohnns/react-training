@@ -5,10 +5,6 @@ import './LetterButton.css';
 
 class LetterButton extends Component {
 
-    //TODO:
-    // ok le LetterButton peut conserver son state mais pour le reset de la game, il faut
-    // qu' on utilise le set usedLetter pour activer/desactiver le bouton.
-
     constructor(props) {
         super(props);
         const { guessLetter, letter } = this.props;
