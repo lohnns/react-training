@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import GameRow from "../components/game/GameRow";
 
 import './App.css';
-import GameInfo from "../components/game/GameInfo";
 
 class App extends Component {
     render() {
@@ -11,7 +11,9 @@ class App extends Component {
                     <h1 className="App-title">Arena Keeper</h1>
                 </header>
                 <p className="App-intro">
-                    <GameInfo/>
+                    <table>
+                        <GameRow/>
+                    </table>
                 </p>
             </div>
         );
