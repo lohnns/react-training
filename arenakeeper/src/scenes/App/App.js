@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import GameRow from "../components/game/GameRow";
+import GameRow from "../../components/game/GameRow";
 
 import './App.css';
 

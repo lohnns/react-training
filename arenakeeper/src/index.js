@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './scenes/App';
+import App from './scenes/App/App';
 
 import './index.css';
 
