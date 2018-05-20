@@ -5,5 +5,5 @@ import GameRow from "./GameRow";
 
 it('renders four cells', function () {
     const wrapper = shallow(<GameRow/>);
-    expect(wrapper.find('td')).to.have.length(4);
+    expect(wrapper.find('td').length).to.equal(4);
 });
