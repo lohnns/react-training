@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import ClassSelector from "../common/ClassSelector";
 
-import './GameRow.scss';
+import './GameRow.css';
 
 class GameInfo extends Component {
 
@@ -10,7 +10,7 @@ class GameInfo extends Component {
         return (
             <tr>
                 <td>#1</td>
-                <td><ClassSelector/></td>
+                <td><ClassSelector defaultValue='warrior'/></td>
                 <td>WIN</td>
                 <td>COIN</td>
             </tr>

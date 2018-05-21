@@ -15,6 +15,11 @@ describe('ClassSelector tests suite', () => {
         expect(wrapper.find('select.select-input').length).to.equal(1);
     });
 
+    it('contains a image displaying class icon', () => {
+        const wrapper = render(<ClassSelector/>);
+        expect(wrapper.find('img').length).to.equal(1);
+    });
+
     it('contains 9 options', () => {
         const wrapper = render(<ClassSelector/>);
         expect(wrapper.find('.select-input > option').length).to.equal(9);
